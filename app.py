@@ -3,7 +3,7 @@ from flask import Flask,request,jsonify,render_template
 import pickle
 
 app=Flask(__name__)
-model=pickle.load(open('model.pkl','rb'))
+model=pickle.load(open('modelamount.pkl','rb'))
 
 
 @app.route('/')
@@ -18,8 +18,9 @@ def predict():
     print(int_features)
     final_features=np.array(int_features)  
     prediction=model.predict(final_features)
-    
-      data = {
+    prediction = str(prediction[0])
+    print(prediction)
+    data = {
             "prediction" : prediction
         }
     return jsonify(data)
