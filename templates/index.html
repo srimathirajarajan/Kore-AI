@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+ 
+</head>
+<body>
+  <h1>
+    Fill the form given below
+  </h1>
+  <div class="container">
+    <form action="{{url_for('predict')}}"method="post">
+      <input type="text" name="Gender" placeholder="Gender" required>
+      <input type="text" name="Age" placeholder="Age" required>
+      <input type="text" name="Previouslyinsured" placeholder="Previouslyinsured" required>
+      <input type="text" name="vehicleage" placeholder="vehicleage" required>
+      <input type="text" name="vehicledamage" placeholder="vehicledamage" required>
+      <input type="text" name="annual_premium" placeholder="annual_premium" required>
+      <input type="text" name="policy" placeholder="policy" required>
+      <input type="text" name="vintage" placeholder="vintage" required>
+
+
+      <button type="submit" class="btn">Predict</button>
+    </form>
+
+    <br>
+    <br>
+    {{ prediction_text }}
+  </div>
+</body>
+</html>
