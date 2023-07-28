@@ -19,9 +19,10 @@ def predict():
     final_features=np.array(int_features)  
     prediction=model.predict(final_features)
     
-    output=prediction
-    
-    return render_template('index.html',prediction_text='Insurance can be {}'.format(output))
+      data = {
+            "prediction" : prediction
+        }
+    return jsonify(data)
 
 
 
